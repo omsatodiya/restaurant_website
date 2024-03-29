@@ -134,11 +134,15 @@ input:focus{
     gap: 5px;
     margin-top: -5px;
 }
-
 #vaild-pass{
     color: red;
     margin: 1rem 0;
     font-weight: 600;
     font-size: 10px;
 }
-
+.email-message {
+    display: block;
+    margin-top: 5px; /* Adjust as needed */
+    font-size: 12px; /* Adjust as needed */
+    color: red;
+}

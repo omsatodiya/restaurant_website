@@ -12,81 +12,95 @@
     <div class="wrapper">
         <h1>Sign Up</h1>
         <form action="">
-        <div class="input username"><input type="text" required placeholder="Username" ><i class='bx bx-user'></i>
-        </div>
+            <div class="input username">
+                <input type="text" required placeholder="Username">
+                <i class='bx bx-user'></i>
+            </div>
 
-        <div class="input e-mail"><input type="e-mail" required placeholder="E-Mail" id="email" oninput="confirm()"><i class='bx bxs-envelope'></i>
-            <span class="email-message"></span>
-        </div>
+            <div class="input e-mail">
+                <input type="email" required placeholder="E-Mail" id="email" oninput="checkEmail()">
+                <i class='bx bxs-envelope'></i>
+                <span class="email-message"></span>
+            </div>
 
-        <div class="input password">
-            <input type="password" oninput="return formvalid()" required id="pass" placeholder="Password">
-            <i class="bi bi-eye-slash" id="togglePassword"></i>
-            <span id="vaild-pass"></span>
-        </div>
+            <div class="input password">
+                <input type="password" oninput="return formvalid()" required id="pass" placeholder="Password">
+                <i class="bi bi-eye-slash" id="togglePassword" ></i>
+                <span id="vaild-pass"></span>
+            </div>
 
+            <div>
+                <button type="submit" class="btn sign-up">Sign Up</button>
+                <p class="message"></p>
+            </div>
 
-        <div >
-            <button type="submit" class="btn sign-up">Sign Up</button>
-            <p class="message"></p>
-        </div>
-
-        <div>
-            <button class="btn google" >
-                <img src="google.svg" alt="">
-                Sign Up with Google
-            </button>
-        </div>
-
-    </form>
+            <div>
+                <button class="btn google" onclick="openGoogleSignUp()">
+                    <img src="google.svg" alt="">
+                    Sign Up with Google
+                </button>
+            </div>
+        </form>
     </div>
     <script>
-
-    function formvalid() {
-
-    //email
-    let email = document.querySelector('#email');
-    function confirm(){
-        if(email.textContent == "")
-        {
-            alert('Please Email');
+        function openGoogleSignUp() {
+            window.open('https://accounts.google.com/signup', '_blank');
         }
-    } 
+        function formvalid() {
+  const passwordInput = document.getElementById('pass');
+  const validPassMessage = document.getElementById('vaild-pass');
 
+  // Password Validation
+  const passwordValue = passwordInput.value;
+  const hasUppercase = /[A-Z]/.test(passwordValue);
+  const hasLowercase = /[a-z]/.test(passwordValue);
+  const hasNumber = /\d/.test(passwordValue);
+  const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/g.test(passwordValue);
+  const isValidPassword = hasUppercase && hasLowercase && hasNumber && hasSpecialChar;
 
-    const password = document.getElementById('pass').value;
-    const validPassMessage = document.getElementById('vaild-pass');
-    validPassMessage.textContent = '';
-
-    if (password.length < 8) {
-        validPassMessage.textContent += 'Minimum Characters 8. ';
+  if (isValidPassword) {
+    validPassMessage.textContent = 'Valid password';
+    validPassMessage.style.color = 'green';
+  } else {
+    let message = 'Password must contain: ';
+    if (!hasUppercase) {
+      message += 'an uppercase letter, ';
     }
-    if (!/[a-z]/.test(password)) {
-        validPassMessage.textContent += 'Include lowercase. ';
+    if (!hasLowercase) {
+      message += 'a lowercase letter, ';
     }
-    if (!/[A-Z]/.test(password)) {
-        validPassMessage.textContent += 'Include uppercase. ';
+    if (!hasNumber) {
+      message += 'a number, ';
     }
-
-    if (!/\d/.test(password)) {
-        validPassMessage.textContent += 'Include number. ';
+    if (!hasSpecialChar) {
+      message += 'a special character, ';
     }
-    if (!/[@!#$%*]/.test(password)) {
-        validPassMessage.textContent += 'Include special character. ';
-    }
-
-    if (validPassMessage.textContent !== '') {
-        validPassMessage.style.color = 'red';
-        return false;
-    } else {
-        validPassMessage.style.color = '';
-        return true;
-    }
+    validPassMessage.textContent = message;
+    validPassMessage.style.color = 'red';
+  }
 }
 
-document.getElementById('pass').addEventListener('input', formvalid);
+// Toggle Password Visibility
+  document.getElementById('togglePassword').addEventListener('click', function() {
+      const password = document.getElementById('pass');
+      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+      password.setAttribute('type', type);
+      this.classList.toggle('bi-eye');
+      this.classList.toggle('bi-eye-slash');
+  });
 
 
+        function checkEmail() {
+            let emailInput = document.getElementById('email');
+            let errorMessage = document.querySelector('.email-message');
+
+            if (!emailInput.value.includes('@')) {
+                errorMessage.textContent = 'Invalid email address.';
+            } else {
+                errorMessage.textContent = ''; 
+            }
+        }
+        document.getElementById('email').addEventListener('input', checkEmail);
     </script>
 </body>
 </html>

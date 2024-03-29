@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const password = document.querySelector('input[type="password"]').value;
       
       if (username === 'om_patel' && password === '12345678') {
-          window.location.href = '#';
+          window.location.href = 'https://www.google.com/';
       } else {
           const message = document.querySelector('.message');
           message.textContent = 'Invalid username or password';

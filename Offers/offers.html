@@ -6,7 +6,6 @@
     <title>Offers at Foodiee.</title>
     <link rel="stylesheet" href="offers.css" />
 
-    <!-- font awesome link  -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -18,13 +17,13 @@
 <body>
   <!-- header section -->
   <header>
-    <a href="#" class="logo"><i class="fa-solid fa-utensils"></i>Foodiee.</a>
+    <a href="/homepage.html" class="logo"><i class="fa-solid fa-utensils"></i>Foodiee.</a>
 
     <nav class="navbar" >
-      <a href="home.html" target="_blank">Home</a>
-      <a href="Offers/offers.html" target="_blank">Offers</a>
-      <a href="About Us/about.html" target="_blank">About</a>
-      <a href="Menu/menu.html" target="_blank" class="menu-anchor">Menu</a>
+      <a href="/homepage.html" target="_blank">Home</a>
+      <a href="offers.html" target="_blank">Offers</a>
+      <a href="/About Us/about.html" target="_blank">About</a>
+      <a href="/Menu/menu.html" target="_blank" class="menu-anchor">Menu</a>
       <div class="sub-menu">
         <div class="box">
           <img src="frankie.jpg" alt="Dish 1" />
@@ -43,31 +42,64 @@
           <p>Chole Bhature</p>
         </div>
       </div>
-      <a href="Book Table/book.html" target="_blank">Book Table</a>
+      <button onclick="openModal()">Book Table</button>
+      <div id="bookTableModal" class="modal">
+        <!-- book table box  -->
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h1 id="heading-book-now">Book Your Table</h1>
+          <div class="book-now">
+            <div id="user-name">
+              <label for="user-name">Name : </label>
+              <input type="text" id="usr" required />
+            </div>
+            <div id="phone-no">
+              <label for="phone-no">Phone No.: </label>
+              <input type="text" id="mbo" required />
+            </div>
+            <div id="email">
+              <label for="email">E-Mail : </label>
+              <input type="email" id="em" required />
+            </div>
+            <div id="date">
+              <label for="date">Date : </label>
+              <input type="date" id="dat" required />
+            </div>
+            <div id="time">
+              <label for="time">Time : </label>
+              <input type="time" id="tim" />
+            </div>
+            <div id="persons">
+              <label for="persons">No. of People : </label>
+              <input type="number" id="no" />
+            </div>
+            <div id="add-info">
+              <label for="add-info">Additional Information : </label>
+              <textarea
+                name="add-info"
+                id="add-information"
+                cols="30"
+                rows="1"
+              ></textarea>
+            </div>
+            <div id="booked">
+              <input
+                type="submit"
+                value="Confirm Booking"
+                onclick="closeModal1()"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </nav>
 
     <div class="icons">
-      <i class="fa-solid fa-bars" id="menu-bars"></i>
-      <a href="Login/login.html"><i class="fas fa-user" id="login"></i></a>
-    
-      <i class="fas fa-search" id="search-icon">
-      </i>
+      <a href="/Login/login.html"><i class="fas fa-user" id="login"></i></a>
       <i class="fas fa-moon" id="mode-change" onclick="modeChange()"></i>
     </div>
   </header>
   <!-- header section  -->
-
-  <!-- search form -->
-  <form action="" id="search-form">
-    <input
-      type="search"
-      placeholder="Search Here.."
-      name=""
-      id="search-box"
-    />
-    <label for="search-box" class="fas fa-search"></label>
-    <i class="fas fa-times" id="close"></i>
-  </form>
 
 <!-- hero section  -->
 <div class="hero">
@@ -79,54 +111,88 @@
 </div>
 </div>
 
-<!-- featured offers  -->
+<!-- featured offers -->
 <div class="featured-offers">
   <div class="fo-text">
     <span class="black-main">Featured</span>
     <span class="green-main">Offers</span>
   </div>
   <div class="content-fo">
-    <div class="card2">Box1</div>
-    <div class="card2">Box2</div>
+    <div class="card2">
+      <img src="featured-img1.jpg" alt="fo1" class="card-img">
+      <div class="card-body">
+        <h5 class="card-title">Punjbai Thali </h5>
+        <p class="card-text">Savor Punjab's essence with our Punjabi Thali, only ₹129, an unbeatable culinary journey.</p>
+      </div>
+    </div>
+    <div class="card2">
+      <img src="featured-img2.jpg" alt="fo2" class="card-img">
+      <div class="card-body">
+        <h5 class="card-title">Fast Food Packages</h5>
+        <p class="card-text">Indulge in our family package deal on Indian fast food, perfect for sharing and savoring together.</p>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- daily specials  -->
+<!-- daily specials -->
 <div class="daily-specials">
   <div class="ds-text">
     <div class="heading-ds">
-    <span class="black-main">Daily</span>
-    <span class="green-main">Specials</span>
-  </div>
-  <div class="content-text">
-    <p>Experience something new </p>
-    <p>every day with our tantalizing daily specials.</p>
-  </div>
+      <span class="black-main">Daily</span>
+      <span class="green-main">Specials</span>
+    </div>
+    <div class="content-text">
+      <p>Experience something new</p>
+      <p>every day with our tantalizing daily specials.</p>
+    </div>
   </div>
   <div class="content-ds">
-    <div class="card3">Box 3</div>
-    <div class="card3">Box 3</div>
+    <div class="card3">
+      <img src="pasta-.jpg" alt="ds1" class="card-img">
+      <div class="card-body">
+        <h5 class="card-title">Pasta with FREE Garlic Bread</h5>
+        <p class="card-text">Savor our fresh vegetable pasta tossed in a creamy pesto sauce, served with a side of garlic bread.</p>
+      </div>
+    </div>
+    <div class="card3">
+      <img src="frankie.jpg" alt="ds2" class="card-img">
+      <div class="card-body">
+        <h5 class="card-title">Special Dish with Frankies</h5>
+        <p class="card-text">Indulge in our veggie Frankie special and enjoy a complimentary side dish with every order for a limited time only!</p>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- special coupons  -->
-<div class="daily-specials">
+<!-- special coupons -->
+<div class="daily-specials special-coupons">
   <div class="content-ds">
-    <div class="card3">Box 3</div>
-    <div class="card3">Box 3</div>
-    <div class="card3">Box 3</div>
-    <div class="card3">Box 3</div>
+    <div class="card3 card4">
+      <img src="image.png" alt="Special Coupon 1" class="card-img">
+      <div class="card-body">
+        <h5 class="card-title">Buy One, Get One Free</h5>
+        <p class="card-text">Get a second Medium Pizza of equal or lesser value for free when you purchase one Large Pizza.</p>
+      </div>
+    </div>
+    <div class="card3 card4">
+      <img src="dessert.jpg" alt="Special Coupon 3" class="card-img">
+      <div class="card-body">
+        <h5 class="card-title">Free Dessert</h5>
+        <p class="card-text">Treat yourself to a free dessert of your choice when you purchase any two entrees.</p>
+      </div>
+    </div>
   </div>
   <div class="ds-text">
     <div class="heading-ds">
-    <span class="black-main">Special</span>
-    <span class="green-main">Coupons</span>
-  </div>
-  <div class="content-text">
-    <p>Indulge in culinary delights for less!</p>
-    <p>Explore our exclusive coupons and savor mouthwatering </p>
-    <p>dishes at unbeatable prices.</p>
-  </div>
+      <span class="black-main">Special</span>
+      <span class="green-main">Coupons</span>
+    </div>
+    <div class="content-text">
+      <p>Indulge in culinary delights for less!</p>
+      <p>Explore our exclusive coupons and savor mouthwatering</p>
+      <p>dishes at unbeatable prices.</p>
+    </div>
   </div>
 </div>
   
@@ -136,13 +202,13 @@
     <i class="fa-solid fa-mug-hot"></i>
     <h2>Follow us on</h2>
     <div class="social-media-icons">
-      <a href=""><i class="fa-brands fa-youtube"></i></a>
-      <a href=""><i class="fa-brands fa-facebook"></i></a>
-      <a href=""> <i class="fa-brands fa-instagram"></i></a>
-      <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://www.instagram.com/"> <i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.twitter.com/"><i class="fa-brands fa-x-twitter"></i></a>
     </div>
     <div class="mail-us"><h2>For Business</h2>
-      <div id="mail">Mail Us on <abbr title="foodiee87@gmail.com" ><a href=""><i class="fa-solid fa-envelope"></i></a></abbr></div>
+      <div id="mail">Mail Us on <abbr title="foodiee87@gmail.com" ><a href="https://www.google.com/"><i class="fa-solid fa-envelope"></i></a></abbr></div>
       </div>
       <div class="location">
         <h2>Address</h2>
@@ -186,6 +252,6 @@
   <span>© Copyright 2024 | Om Satodiya | All Rights Reserved</span>
 </div>
 
-<script src="offers.js"></script>
+<script src="/homepage.js"></script>
 
 </body>

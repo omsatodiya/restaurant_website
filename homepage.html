@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Order Your Favourite Food Now ! - Foodiee</title>
     <link rel="stylesheet" href="homepage.css" />
-
-    <!-- font awesome link  -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -14,14 +12,16 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-</head>
-<body>
-    <!-- header section -->
+  </head>
+  <body>
+    <!-- header-->
     <header>
-      <a href="#" class="logo"><i class="fa-solid fa-utensils"></i>Foodiee.</a>
+      <a href="homepage.html" class="logo"
+        ><i class="fa-solid fa-utensils"></i>Foodiee.</a
+      >
 
-      <nav class="navbar" >
-        <a href="homepage.html" >Home</a>
+      <nav class="navbar">
+        <a href="homepage.html">Home</a>
         <a href="Offers/offers.html" target="_blank">Offers</a>
         <a href="About Us/about.html" target="_blank">About</a>
         <a href="Menu/menu.html" target="_blank" class="menu-anchor">Menu</a>
@@ -45,71 +45,64 @@
         </div>
         <button onclick="openModal()">Book Table</button>
         <div id="bookTableModal" class="modal">
-
           <!-- book table box  -->
           <div class="modal-content">
-              <span class="close" onclick="closeModal()">&times;</span>
-              <h1 id="heading-book-now">Book Your Table </h1>
-              <div class="book-now">
-                <div id="user-name">
-                  <label for="user-name">Name : </label>
-                  <input type="text">
-                </div>
-                <div id="phone-no">
-                  <label for="phone-no">Phone No.: </label>
-                  <input type="text">
-                </div>
-                <div id="email">
-                  <label for="email">E-Mail : </label>
-                  <input type="email">
-                </div>
-                <div id="date">
-                  <label for="date">Date : </label>
-                  <input type="date">
-                </div>
-                <div id="time">
-                  <label for="time">Time : </label>
-                  <input type="time">
-                </div>
-                <div id="persons">
-                  <label for="persons">No. of People : </label>
-                  <input type="number">
-                </div>
-                <div id="add-info">
-                  <label for="add-info">Additional Information : </label>
-                  <textarea name="add-info" id="add-information" cols="30" rows="1"></textarea>
-                </div>
-                <div id="booked">
-                  <input type="submit" value="Confirm Booking" onclick="closeModal1()">
-                </div>
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h1 id="heading-book-now">Book Your Table</h1>
+            <div class="book-now">
+              <div id="user-name">
+                <label for="user-name">Name : </label>
+                <input type="text" id="usr" required />
               </div>
+              <div id="phone-no">
+                <label for="phone-no">Phone No.: </label>
+                <input type="text" id="mbo" required />
+              </div>
+              <div id="email">
+                <label for="email">E-Mail : </label>
+                <input type="email" id="em" required />
+              </div>
+              <div id="date">
+                <label for="date">Date : </label>
+                <input type="date" id="dat" required />
+              </div>
+              <div id="time">
+                <label for="time">Time : </label>
+                <input type="time" id="tim" />
+              </div>
+              <div id="persons">
+                <label for="persons">No. of People : </label>
+                <input type="number" id="no"/>
+              </div>
+              <div id="add-info">
+                <label for="add-info">Additional Information : </label>
+                <textarea
+                  name="add-info"
+                  id="add-information"
+                  cols="30"
+                  rows="1"
+                ></textarea>
+              </div>
+              <div id="booked">
+                <input
+                  type="submit"
+                  value="Confirm Booking"
+                  onclick="closeModal1()"
+                />
+              </div>
+            </div>
           </div>
-      </div>
+        </div>
       </nav>
 
       <div class="icons">
         <i class="fa-solid fa-bars" id="menu-bars"></i>
         <i class="fa-solid fa-cart-shopping"></i>
         <a href="Login/login.html"><i class="fas fa-user" id="login"></i></a>
-      
-        <i class="fas fa-search" id="search-icon">
-        </i>
         <i class="fas fa-moon" id="mode-change" onclick="modeChange()"></i>
       </div>
     </header>
-    <!-- header section  -->
-
-    <!-- search form -->
-    <form action="" id="search-form">
-      <input
-        type="search"
-        placeholder="Search Here.."
-        name=""
-        id="search-box"
-      />
-      <label for="search-box" class="fas fa-search"></label>
-      <i class="fas fa-times" id="close"></i>
-    </form>
+    <!-- header -->
 
     <!-- home section  -->
     <section>
@@ -123,31 +116,81 @@
             tacos, crispy dosas to savory Chinese noodles, every bite tells a
             delicious story at our restaurant!
           </p>
-          <a href="Menu/menu.html" target="_blank"><button class="btn explore-more">
-            Explore More <i class="fa fa-arrow-right" aria-hidden="true"></i>
-          </button></a>
-          
+          <a href="Menu/menu.html" target="_blank"
+            ><button class="btn explore-more">
+              Explore More
+              <i class="fa fa-arrow-right" aria-hidden="true"></i></button
+          ></a>
         </div>
         <div class="hero-img">
-            <img src="Assets/Images/hero_image.jpg" alt="" id="hero-image" />
+          <img src="Assets/Images/hero_image.jpg" alt="" id="hero-image" />
         </div>
-        </div>
+      </div>
 
-      <!-- our special dishes -->
+      <!-- order now  -->
+      <div id="order" class="order">
+        <div class="order-content">
+          <span class="close-order">&times;</span>
+          <form id="orderForm">
+            <h1>Order Food</h1>
+            <div>
+              <label for="itemName">Food Item</label>
+              <select id="itemName" required>
+                <option value="">Select Food Item</option>
+                <option value="pizza">Pizza</option>
+                <option value="burger">Burger</option>
+                <option value="tacos">Tacos</option>
+                <option value="panner_masala">Panner Tikka Masala</option>
+                <option value="pasta">Pasta</option>
+                <option value="frankie">Frankie</option>
+                <option value="biryani">Veg. Biryani</option>
+                <option value="chole_bhature">Chole Bhature</option>
+              </select>
+            </div>
+            <div>
+              <label for="quantity">Quantity</label>
+              <input type="number" id="quantity" min="1" value="1" required />
+            </div>
+            <div id="add">
+              <label for="address">Delivery Address</label>
+              <textarea id="address" rows="1" required></textarea>
+            </div>
+            <div>
+              <label for="paymentMethod">Payment Method</label>
+              <select id="paymentMethod" required>
+                <option value="">Select Payment Method</option>
+                <option value="cash">Cash on Delivery</option>
+                <option value="card">Credit/Debit Card</option>
+                <option value="online">Online Payment</option>
+              </select>
+            </div>
+            <div>
+              <label for="totalPrice">Total Price</label>
+              <input type="text" id="totalPrice" readonly />
+            </div>
+            <button type="button" id="confirmOrder">Confirm Order</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="toast" class="toast"></div>
+
+      <!-- Our Special Dishes -->
       <div class="special-dish">
-            <div class="special-dish-text">
+        <div class="special-dish-text">
           <span class="hero-main-text">Our </span>
           <span class="hero-text-main" id="special-dish"> Special Dishes</span>
         </div>
         <div class="cards">
-            <div class="card">
+          <div class="card">
             <img src="Assets/Images/chinese_noodles.webp" alt="" />
             <div class="content">
               <h2>Chinese Noodles</h2>
               <p>
-                Authentic Chinese noodles, expertly stir-fried for a perfect blend of flavors and textures.
+                Authentic Chinese noodles, expertly stir-fried for a perfect
+                blend of flavors and textures.
               </p>
-              <button class="btn">Order Now</button>
+              <button class="orderBtn btn">Order Now</button>
             </div>
           </div>
           <div class="card">
@@ -155,9 +198,10 @@
             <div class="content">
               <h2>Masala Dosa</h2>
               <p>
-                Golden crispy dosa filled with savory potato masala, served with tangy chutneys for a delightful South Indian experience.
+                Golden crispy dosa filled with savory potato masala, served with
+                tangy chutneys for a delightful South Indian experience.
               </p>
-              <button class="btn">Order Now</button>
+              <button class="orderBtn btn">Order Now</button>
             </div>
           </div>
           <div class="card">
@@ -165,13 +209,15 @@
             <div class="content">
               <h2>Italian Pizza</h2>
               <p>
-                Traditional Italian pizza, baked to perfection in a wood-fired oven with the finest ingredients for an irresistible taste sensation.
+                Traditional Italian pizza, baked to perfection in a wood-fired
+                oven with the finest ingredients for an irresistible taste
+                sensation.
               </p>
-              <button class="btn">Order Now</button>
+              <button class="orderBtn btn">Order Now</button>
             </div>
           </div>
         </div>
-        </div>
+      </div>
 
       <!-- special offers -->
       <div class="special-offers">
@@ -186,10 +232,10 @@
             combos, there's something for everyone. Treat yourself today!
           </div>
           <a href="Offers/offers.html" target="_blank">
-          <button class="btn explore-more">
-            See More <i class="fa fa-arrow-right" aria-hidden="true"></i>
-          </button>
-        </a>
+            <button class="btn explore-more">
+              See More <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            </button>
+          </a>
         </div>
         <div class="offers-img">
           <img src="Assets/Images/offers-removebg-preview.png" alt="" />
@@ -208,11 +254,12 @@
             <div class="content">
               <h2>Paneer Tikka Masala</h2>
               <p>
-                Creamy paneer cubes in a rich, spiced tomato sauce, served with fluffy naan.
+                Creamy paneer cubes in a rich, spiced tomato sauce, served with
+                fluffy naan.
               </p>
               <a href="Menu/menu.html" target="_blank">
-              <button class="btn ">Explore More</button>
-                </a>
+                <button class="btn">Explore More</button>
+              </a>
             </div>
           </div>
           <div class="card">
@@ -220,11 +267,12 @@
             <div class="content">
               <h2>Italian Pasta</h2>
               <p>
-                Authentic Italian pasta dishes with homemade sauces and Parmesan cheese.
+                Authentic Italian pasta dishes with homemade sauces and Parmesan
+                cheese.
               </p>
               <a href="Menu/menu.html" target="_blank">
-              <button class="btn">Explore More</button>
-            </a>
+                <button class="btn">Explore More</button>
+              </a>
             </div>
           </div>
           <div class="card">
@@ -232,10 +280,11 @@
             <div class="content">
               <h2>Veg. Biryani</h2>
               <p>
-                Fragrant basmati rice cooked with mixed vegetables and aromatic spices, served with cooling raita.
+                Fragrant basmati rice cooked with mixed vegetables and aromatic
+                spices, served with cooling raita.
               </p>
               <a href="Menu/menu.html" target="_blank">
-              <button class="btn">Explore More</button>
+                <button class="btn">Explore More</button>
               </a>
             </div>
           </div>
@@ -244,11 +293,12 @@
             <div class="content">
               <h2>Vegiee Burger</h2>
               <p>
-                Hearty vegetable patty with crisp lettuce and ripe tomatoes in a soft bun.
+                Hearty vegetable patty with crisp lettuce and ripe tomatoes in a
+                soft bun.
               </p>
               <a href="Menu/menu.html" target="_blank">
-              <button class="btn ">Explore More</button>
-            </a>
+                <button class="btn">Explore More</button>
+              </a>
             </div>
           </div>
           <div class="card">
@@ -256,11 +306,12 @@
             <div class="content">
               <h2>Chole Bhature</h2>
               <p>
-                Spicy chickpea curry paired with fluffy deep-fried bread, a North Indian classic.
+                Spicy chickpea curry paired with fluffy deep-fried bread, a
+                North Indian classic.
               </p>
               <a href="Menu/menu.html" target="_blank">
-              <button class="btn">Explore More</button>
-            </a>
+                <button class="btn">Explore More</button>
+              </a>
             </div>
           </div>
           <div class="card">
@@ -268,10 +319,11 @@
             <div class="content">
               <h2>Frankie</h2>
               <p>
-                Spicy marinated veggies wrapped in soft rotis, bursting with flavors.
+                Spicy marinated veggies wrapped in soft rotis, bursting with
+                flavors.
               </p>
               <a href="Menu/menu.html" target="_blank">
-              <button class="btn">Explore More</button>
+                <button class="btn">Explore More</button>
               </a>
             </div>
           </div>
@@ -285,29 +337,38 @@
         </div>
         <div class="why-choose-us-text">
           <div id="main-text-why-us">
-          <span class="hero-main-text">Why to </span>
-          <span class="hero-text-main" id="special-dish">Choose Us ?</span>
-        </div>
+            <span class="hero-main-text">Why to </span>
+            <span class="hero-text-main" id="special-dish">Choose Us ?</span>
+          </div>
           <div class="why-us-content">
             <div class="sec1">
               <i class="fas fa-seedling"></i>
               <div class="about">
                 <h3>Quality Ingredients</h3>
-                <p>We source our ingredients locally, ensuring freshness and supporting local producers.</p>
+                <p>
+                  We source our ingredients locally, ensuring freshness and
+                  supporting local producers.
+                </p>
               </div>
             </div>
             <div class="sec1">
               <i class="fa-solid fa-wrench"></i>
               <div class="about">
                 <h3>Exceptional Service</h3>
-                <p>Our friendly staff members undergo extensive training to provide top-notch service with a smile.</p>
+                <p>
+                  Our friendly staff members undergo extensive training to
+                  provide top-notch service with a smile.
+                </p>
               </div>
             </div>
             <div class="sec1">
-              <i class="fa fa-cutlery "aria-hidden="true"></i>
+              <i class="fa fa-cutlery" aria-hidden="true"></i>
               <div class="about">
                 <h3>Unique Dining Experience</h3>
-                <p>Our restaurant boasts a cozy ambiance with modern decor, perfect for intimate dinners or lively gatherings.</p>
+                <p>
+                  Our restaurant boasts a cozy ambiance with modern decor,
+                  perfect for intimate dinners or lively gatherings.
+                </p>
               </div>
             </div>
           </div>
@@ -316,99 +377,142 @@
 
       <!-- Feedbacks  -->
       <div class="feedback-main">
-      <div class="feedback-heading">
-      <h1 class="heading">Customer <h1 id="feed">Feedback</h1></h1>
-    </div>
-      <section class="feedback">
-        <div class="card1">
-          <div class="avatar"><img src="Assets/Images/profile1.avif" alt="Person 1"></div>
-          <h2>Mukesh Ambani</h2>
-          <p>"The food was amazing, and the staff was very friendly and accommodating. Will definitely recommend this restaurant to friends and family!"</p>
+        <div class="feedback-heading">
+          <h1 class="heading">
+            Customer
+            <h1 id="feed">Feedback</h1>
+          </h1>
         </div>
-        <div class="card1">
-          <div class="avatar"><img src="Assets/Images/profile2.avif" alt="Person 2"></div>
-          <h2>Smriti Patel</h2>
-          <p>"I had a wonderful experience dining here. The atmosphere was delightful, and the dishes were simply outstanding!"</p>
-        </div>
-        <div class="card1">
-          <div class="avatar"><img src="Assets/Images/profile3.avif" alt="Person 3"></div>
-          <h2>Manthan Chauhan</h2>
-          <p>"Great food, great service! The restaurant's attention to detail truly sets it apart. Looking forward to my next visit!"</p>
-        </div>
-      </section>    
-    </div>
+        <section class="feedback">
+          <div class="card1">
+            <div class="avatar">
+              <img src="Assets/Images/profile1.avif" alt="Person 1" />
+            </div>
+            <h2>Mukesh Ambani</h2>
+            <p>
+              "The food was amazing, and the staff was very friendly and
+              accommodating. Will definitely recommend this restaurant to
+              friends and family!"
+            </p>
+          </div>
+          <div class="card1">
+            <div class="avatar">
+              <img src="Assets/Images/profile2.avif" alt="Person 2" />
+            </div>
+            <h2>Smriti Patel</h2>
+            <p>
+              "I had a wonderful experience dining here. The atmosphere was
+              delightful, and the dishes were simply outstanding!"
+            </p>
+          </div>
+          <div class="card1">
+            <div class="avatar">
+              <img src="Assets/Images/profile3.avif" alt="Person 3" />
+            </div>
+            <h2>Manthan Chauhan</h2>
+            <p>
+              "Great food, great service! The restaurant's attention to detail
+              truly sets it apart. Looking forward to my next visit!"
+            </p>
+          </div>
+        </section>
+      </div>
 
       <!-- end section  -->
       <div class="subscribe">
         <div class="subscribe-text">
-        <span class="hero-main-text">Subscribe Our </span>
-        <span class="hero-text-main" id="special-dish">Newsletter</span>
-      </div>
-      <div class="subscribe-input">
-        <form action="">
-          <input type="email" placeholder="Enter Your E-Mail here..">
-          <button class="subscribe-btn" >Subscribe</button>
-        </form>
-      </div>
+          <span class="hero-main-text">Subscribe Our </span>
+          <span class="hero-text-main" id="special-dish">Newsletter</span>
+        </div>
+        <div class="subscribe-input">
+          <form action="" id="subscribe">
+            <input type="email" id="subInput" required placeholder="Enter Your E-Mail here.." />
+            <button class="subscribe-btn" onclick="subscribe()">Subscribe</button>
+          </form>
+        </div>
       </div>
     </section>
 
-<!-- footer  -->
+    <!-- footer  -->
     <footer>
       <div class="col1">
         <i class="fa-solid fa-mug-hot"></i>
         <h2>Follow us on</h2>
         <div class="social-media-icons">
-          <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
-          <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
-          <a href="https://www.instagram.com/"> <i class="fa-brands fa-instagram"></i></a>
-          <a href="https://twitter.com/"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.youtube.com/"
+            ><i class="fa-brands fa-youtube"></i
+          ></a>
+          <a href="https://www.facebook.com/"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="https://www.instagram.com/">
+            <i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="https://twitter.com/"
+            ><i class="fa-brands fa-x-twitter"></i
+          ></a>
         </div>
-        <div class="mail-us"><h2>For Business</h2>
-          <div id="mail">Mail Us on <abbr title="foodiee87@gmail.com" ><a href="https://www.gmail.com/"><i class="fa-solid fa-envelope"></i></a></abbr></div>
+        <div class="mail-us">
+          <h2>For Business</h2>
+          <div id="mail">
+            Mail Us on
+            <abbr title="foodiee87@gmail.com"
+              ><a href="https://www.google.com/"
+                ><i class="fa-solid fa-envelope"></i></a
+            ></abbr>
           </div>
-          <div class="location">
-            <h2>Address</h2>
-            <div id="address"><span>Keval Chowk, Ichhanathh Road,</span> <span>Near SVNIT, Surat</span><span> Pin Code : 350790</span></div>
+        </div>
+        <div class="location">
+          <h2>Address</h2>
+          <div id="address">
+            <span>Keval Chowk, Ichhanathh Road,</span>
+            <span>Near SVNIT, Surat</span><span> Pin Code : 350790</span>
           </div>
+        </div>
       </div>
       <div class="col2">
         <h2>Opening Hours</h2>
         <div class="hrs">
-        <div class="day">
-          <span>Monday</span>
-          <span>Tuesday</span>
-          <span>Wednesday</span>
-          <span>Thursday</span>
-          <span>Friday</span>
-          <span>Saturday</span>
-          <span>Sunday</span>
+          <div class="day">
+            <span>Monday</span>
+            <span>Tuesday</span>
+            <span>Wednesday</span>
+            <span>Thursday</span>
+            <span>Friday</span>
+            <span>Saturday</span>
+            <span>Sunday</span>
+          </div>
+          <div class="time">
+            <span>10:30 A.M. to 9:30 P.M.</span>
+            <span>10:30 A.M. to 9:30 P.M.</span>
+            <span>10:30 A.M. to 9:30 P.M.</span>
+            <span>10:30 A.M. to 9:30 P.M.</span>
+            <span>10:30 A.M. to 9:30 P.M.</span>
+            <span>10:30 A.M. to 9:30 P.M.</span>
+            <span>5:30 P.M. to 9:30 P.M.</span>
+          </div>
         </div>
-        <div class="time">
-          <span>10:30 A.M. to 9:30 P.M.</span>
-          <span>10:30 A.M. to 9:30 P.M.</span>
-          <span>10:30 A.M. to 9:30 P.M.</span>
-          <span>10:30 A.M. to 9:30 P.M.</span>
-          <span>10:30 A.M. to 9:30 P.M.</span>
-          <span>10:30 A.M. to 9:30 P.M.</span>
-          <span>5:30 P.M. to 9:30 P.M.</span>
-        </div>
-</div>
       </div>
       <div class="col3">
         <h2>Contact Us</h2>
         <form action="" id="myForm">
-          <input type="text" placeholder="Name">
-          <input type="text" placeholder="Phone No.">
-          <textarea name="" id="" cols="40" rows="5" placeholder="Message..."></textarea>
-          <input type="submit" class="submit-response" onclick="submitted()">
-    </form>
-    </div>
-</footer>
+          <input type="text" placeholder="Name" />
+          <input type="text" placeholder="Phone No." />
+          <textarea
+            name=""
+            id=""
+            cols="40"
+            rows="5"
+            placeholder="Message..."
+          ></textarea>
+          <input type="submit" class="submit-response" onclick="submitted()" />
+        </form>
+      </div>
+    </footer>
     <div class="copyright">
       <span>© Copyright 2024 | Om Satodiya | All Rights Reserved</span>
     </div>
 
     <script src="homepage.js"></script>
-</body>
+  </body>
 </html>
