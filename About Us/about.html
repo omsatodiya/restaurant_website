@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us - Foodiee</title>
@@ -14,156 +14,262 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-</head>
-<body>
-  <!-- header section -->
-  <header>
-    <a href="#" class="logo"><i class="fa-solid fa-utensils"></i>Foodiee.</a>
+  </head>
+  <body>
+    <!-- header section -->
+    <header>
+      <a href="/index.html" class="logo"
+        ><i class="fa-solid fa-utensils"></i>Foodiee.</a
+      >
 
-    <nav class="navbar" >
-      <a href="homepage.html" target="_blank">Home</a>
-      <a href="Offers/offers.html" target="_blank">Offers</a>
-      <a href="About Us/about.html" target="_blank">About</a>
-      <a href="Menu/menu.html" target="_blank" class="menu-anchor">Menu</a>
-      <div class="sub-menu">
-        <div class="box">
-          <img src="frankie.jpg" alt="Dish 1" />
-          <p>Frankie</p>
+      <nav class="navbar">
+        <a href="/index.html" target="_blank">Home</a>
+        <a href="/Offers/offers.html" target="_blank">Offers</a>
+        <a href="/About Us/about.html" target="_blank">About</a>
+        <a href="/Menu/menu.html" target="_blank" class="menu-anchor">Menu</a>
+        <div class="sub-menu">
+          <div class="box">
+            <img src="/Assets/Images/frankie.jpg" alt="Dish 1" />
+            <p>Frankie</p>
+          </div>
+          <div class="box">
+            <img src="/Assets/Images/paneer-tikka-masala-.webp" alt="Dish 2" />
+            <p>Paneer Masala</p>
+          </div>
+          <div class="box">
+            <img src="/Assets/Images/pasta-.jpg" alt="Dish 3" />
+            <p>Pastas</p>
+          </div>
+          <div class="box">
+            <img src="/Assets/Images/chole-bhature.cms" alt="Dish 4" />
+            <p>Chole Bhature</p>
+          </div>
         </div>
-        <div class="box">
-          <img src="paneer-tikka-masala-.webp" alt="Dish 2" />
-          <p>Paneer Masala</p>
+        <button onclick="openModal()">Book Table</button>
+        <div id="bookTableModal" class="modal">
+          <!-- book table box  -->
+          <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h1 id="heading-book-now">Book Your Table</h1>
+            <div class="book-now">
+              <div id="user-name">
+                <label for="user-name">Name : </label>
+                <input type="text" id="usr" required />
+              </div>
+              <div id="phone-no">
+                <label for="phone-no">Phone No.: </label>
+                <input type="text" id="mbo" required />
+              </div>
+              <div id="email">
+                <label for="email">E-Mail : </label>
+                <input type="email" id="em" required />
+              </div>
+              <div id="date">
+                <label for="date">Date : </label>
+                <input type="date" id="dat" required />
+              </div>
+              <div id="time">
+                <label for="time">Time : </label>
+                <input type="time" id="tim" />
+              </div>
+              <div id="persons">
+                <label for="persons">No. of People : </label>
+                <input type="number" id="no" />
+              </div>
+              <div id="add-info">
+                <label for="add-info">Additional Information : </label>
+                <textarea
+                  name="add-info"
+                  id="add-information"
+                  cols="30"
+                  rows="1"
+                ></textarea>
+              </div>
+              <div id="booked">
+                <input
+                  type="submit"
+                  value="Confirm Booking"
+                  onclick="closeModal1()"
+                />
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="box">
-          <img src="pasta-.jpg" alt="Dish 3" />
-          <p>Pastas</p>
-        </div>
-        <div class="box">
-          <img src="chole-bhature.cms" alt="Dish 4" />
-          <p>Chole Bhature</p>
-        </div>
+      </nav>
+
+      <div class="icons">
+        <a href="/Login/login.html"><i class="fas fa-user" id="login"></i></a>
+        <i class="fas fa-moon" id="mode-change" onclick="modeChange()"></i>
       </div>
-      <a href="Book Table/book.html" target="_blank">Book Table</a>
-    </nav>
+    </header>
+    <!-- header section  -->
 
-    <div class="icons">
-      <i class="fa-solid fa-bars" id="menu-bars"></i>
-      <a href="Login/login.html"><i class="fas fa-user" id="login"></i></a>
-    
-      <i class="fas fa-search" id="search-icon">
-      </i>
-      <i class="fas fa-moon" id="mode-change" onclick="modeChange()"></i>
+    <!-- search form -->
+    <form action="" id="search-form">
+      <input
+        type="search"
+        placeholder="Search Here.."
+        name=""
+        id="search-box"
+      />
+      <label for="search-box" class="fas fa-search"></label>
+      <i class="fas fa-times" id="close"></i>
+    </form>
+
+    <!-- hero section  -->
+    <div class="hero">
+      <div class="hero-img">
+        <img src="hero-bcg.jpg" alt="" />
+      </div>
+      <div class="foodiee">
+        <h1>Foodiee</h1>
+      </div>
+      <div class="content1">
+        <p>
+          Welcome to Foodie, where passion for food meets the joy of vegetarian
+          dining.
+        </p>
+        <p>
+          At Foodiee, we believe that delicious food should nourish both the
+          body and the soul.
+        </p>
+        <p>
+          Established with a commitment to providing wholesome, flavorful, and
+          entirely vegetarian cuisine,
+        </p>
+        <p>
+          we invite you to embark on a culinary journey that celebrates the
+          bounty of nature's harvest.
+        </p>
+      </div>
+      <div class="hero-img hero2">
+        <marquee behavior="smooth" direction="left"
+          >Welcome to Foodiee. We serve the best Veg Food possible in the
+          market.</marquee
+        >
+      </div>
     </div>
-  </header>
-  <!-- header section  -->
 
-  <!-- search form -->
-  <form action="" id="search-form">
-    <input
-      type="search"
-      placeholder="Search Here.."
-      name=""
-      id="search-box"
-    />
-    <label for="search-box" class="fas fa-search"></label>
-    <i class="fas fa-times" id="close"></i>
-  </form>
+    <!-- section 1 -->
+    <section class="section1">
+      <div class="sec1img">
+        <img src="hero_image.jpg" alt="hero-img" />
+      </div>
+      <div class="content2">
+        <p>
+          Our chefs are artisans, weaving together the finest ingredients to
+          create a symphony of flavors that captivate the senses and delight the
+          palate.
+        </p>
 
-<!-- hero section  -->
-<div class="hero">
-  <div class="hero-img">
-    <img src="hero-bcg.jpg" alt="">
-  </div>
-  <div class="foodiee">
-  <h1>Foodiee</h1>
-</div>
-  <div class="content1">
-<p>Welcome to Foodie, where passion for food meets the joy of vegetarian dining.</p>
-<p>At Foodiee, we believe that delicious food should nourish both the body and the soul.</p> <p>Established with a commitment to providing wholesome, flavorful, and entirely vegetarian cuisine, </p> <p>we invite you to embark on a culinary journey that celebrates the bounty of nature's harvest.</p> 
-  </div>
-  <div class="hero-img hero2">
-   <marquee behavior="smooth" direction="left">Welcome to Foodiee. We serve the best Veg Food possible in the market.</marquee>
-  </div>
-</div>
+        <p>
+          From farm-fresh produce to locally sourced herbs and spices, every
+          dish at Foodiee is thoughtfully crafted with love and care.
+        </p>
 
-<!-- section 1 -->
-<section class="section1">
-  <div class="sec1img">
-    <img src="hero_image.jpg" alt="hero-img">
-  </div>
-  <div class="content2">
-    <p>Our chefs are artisans, weaving together the finest ingredients to create a symphony of flavors that captivate the senses and delight the palate.</p>
+        <p>
+          More than just a restaurant, Foodiee is a gathering place for food
+          lovers, where friends and family come together to share memorable
+          moments over a shared appreciation for great food.
+        </p>
 
- <p>From farm-fresh produce to locally sourced herbs and spices, every dish at Foodiee is thoughtfully crafted with love and care.</p>
+        <p>
+          Whether you're a devoted vegetarian or simply seeking a delicious
+          meat-free meal, our diverse menu offers something for everyone, from
+          hearty comfort food classics to innovative culinary creations.
+        </p>
+      </div>
+    </section>
 
-<p>More than just a restaurant, Foodiee is a gathering place for food lovers, where friends and family come together to share memorable moments over a shared appreciation for great food.</p> 
+    <section class="last-sec">
+      <img src="hero-bcg.jpg" alt="" />
+      <div class="text-main">
+        <h1>
+          Indulge your senses. Feed your soul. Come, be a part of the Foodiee
+          family
+        </h1>
+      </div>
+    </section>
 
-<p>Whether you're a devoted vegetarian or simply seeking a delicious meat-free meal, our diverse menu offers something for everyone, from hearty comfort food classics to innovative culinary creations.</p>
-
-  </div>
-</section>
-
-<section class="last-sec">
-    <img src="hero-bcg.jpg" alt="">
-    <div class="text-main">
-      <h1>Indulge your senses. Feed your soul. Come, be a part of the Foodiee family</h1>
-  </div>
-</section>
-  
-<!-- footer  -->
-<footer>
-  <div class="col1">
+    <!-- footer  -->
+    <footer>
+      <div class="col1">
         <i class="fa-solid fa-mug-hot"></i>
         <h2>Follow us on</h2>
         <div class="social-media-icons">
-          <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
-          <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
-          <a href="https://www.instagram.com/"> <i class="fa-brands fa-instagram"></i></a>
-          <a href="https://twitter.com/"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.youtube.com/"
+            ><i class="fa-brands fa-youtube"></i
+          ></a>
+          <a href="https://www.facebook.com/"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="https://www.instagram.com/">
+            <i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="https://twitter.com/"
+            ><i class="fa-brands fa-x-twitter"></i
+          ></a>
         </div>
-        <div class="mail-us"><h2>For Business</h2>
-          <div id="mail">Mail Us on <abbr title="foodiee87@gmail.com" ><a href="https://www.gmail.com/"><i class="fa-solid fa-envelope"></i></a></abbr></div>
+        <div class="mail-us">
+          <h2>For Business</h2>
+          <div id="mail">
+            Mail Us on
+            <abbr title="foodiee87@gmail.com"
+              ><a href="https://www.gmail.com/"
+                ><i class="fa-solid fa-envelope"></i></a
+            ></abbr>
           </div>
-      <div class="location">
-        <h2>Address</h2>
-        <div id="address"><span>Keval Chowk, Ichhanathh Road,</span> <span>Near SVNIT, Surat</span><span> Pin Code : 350790</span></div>
+        </div>
+        <div class="location">
+          <h2>Address</h2>
+          <div id="address">
+            <span>Keval Chowk, Ichhanathh Road,</span>
+            <span>Near SVNIT, Surat</span><span> Pin Code : 350790</span>
+          </div>
+        </div>
       </div>
-  </div>
-  <div class="col2">
-    <h2>Opening Hours</h2>
-    <div class="hrs">
-    <div class="day">
-      <span>Monday</span>
-      <span>Tuesday</span>
-      <span>Wednesday</span>
-      <span>Thursday</span>
-      <span>Friday</span>
-      <span>Saturday</span>
-      <span>Sunday</span>
+      <div class="col2">
+        <h2>Opening Hours</h2>
+        <div class="hrs">
+          <div class="day">
+            <span>Monday</span>
+            <span>Tuesday</span>
+            <span>Wednesday</span>
+            <span>Thursday</span>
+            <span>Friday</span>
+            <span>Saturday</span>
+            <span>Sunday</span>
+          </div>
+          <div class="time">
+            <span>10:30 A.M. to 9:30 P.M.</span>
+            <span>10:30 A.M. to 9:30 P.M.</span>
+            <span>10:30 A.M. to 9:30 P.M.</span>
+            <span>10:30 A.M. to 9:30 P.M.</span>
+            <span>10:30 A.M. to 9:30 P.M.</span>
+            <span>10:30 A.M. to 9:30 P.M.</span>
+            <span>5:30 P.M. to 9:30 P.M.</span>
+          </div>
+        </div>
+      </div>
+      <div class="col3">
+        <h2>Contact Us</h2>
+        <form action="" id="myForm">
+          <input type="text" placeholder="Name" />
+          <input type="text" placeholder="Phone No." />
+          <textarea
+            name=""
+            id=""
+            cols="40"
+            rows="5"
+            placeholder="Message..."
+          ></textarea>
+          <input type="submit" class="submit-response" onclick="submitted()" />
+        </form>
+      </div>
+    </footer>
+    <div class="copyright">
+      <span>© Copyright 2024 | Om Satodiya | All Rights Reserved</span>
     </div>
-    <div class="time">
-      <span>10:30 A.M. to 9:30 P.M.</span>
-      <span>10:30 A.M. to 9:30 P.M.</span>
-      <span>10:30 A.M. to 9:30 P.M.</span>
-      <span>10:30 A.M. to 9:30 P.M.</span>
-      <span>10:30 A.M. to 9:30 P.M.</span>
-      <span>10:30 A.M. to 9:30 P.M.</span>
-      <span>5:30 P.M. to 9:30 P.M.</span>
-    </div>
-</div>
-  </div>
-  <div class="col3">
-    <h2>Contact Us</h2>
-    <form action="" id="myForm">
-      <input type="text" placeholder="Name">
-      <input type="text" placeholder="Phone No.">
-      <textarea name="" id="" cols="40" rows="5" placeholder="Message..."></textarea>
-      <input type="submit" class="submit-response" onclick="submitted()">
-</form>
-</div>
-</footer>
-<div class="copyright">
-  <span>© Copyright 2024 | Om Satodiya | All Rights Reserved</span>
-</div>
-
-</body>
+    <script src="/script.js"></script>
+  </body>
+</html>

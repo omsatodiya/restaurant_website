@@ -32,7 +32,7 @@ header {
   right: 0;
   left: 0;
   background: white;
-  padding: 1rem 7%;
+  padding: 1rem 5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -311,7 +311,7 @@ select:focus {
 }
 
 .toast.success {
-  background-color: rgb(15, 199, 15);
+  background-color: rgb(18, 208, 18);
 }
 
 .toast.error {
@@ -828,31 +828,29 @@ footer {
 }
 
 @media (max-width: 800px) {
-  header .icons #menu-bars {
-    display: inline-block;
+  .modal-content,
+  #orderForm,
+  .hero-text,
+  .card,
+  .offers-text,
+  .offers-img,
+  .why-us-img img,
+  .card1,
+  footer .col1,
+  footer .col2,
+  footer .col3 {
+    width: 100%; /* Adjusted width for smaller screens */
   }
-  header .navbar {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #fff;
-    border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
-    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
-    padding: 1rem;
-  }
+}
 
-  header .navbar a {
-    display: block;
-    padding: 1.5rem;
-    margin: 1rem;
-    font-size: 2rem;
-    background-color: #eee;
+@media (max-width: 600px) {
+  .hero-text {
+    margin: 20% 2%; /* Further adjusted margin for smaller screens */
   }
 }
 
 @media (max-width: 330px) {
   html {
-    font-size: 50%;
+    font-size: 50%; /* Further adjusted base font size for smaller screens */
   }
 }

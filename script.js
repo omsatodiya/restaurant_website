@@ -120,10 +120,10 @@ function placeOrder() {
   }
 }
 
-function showToast(message) {
+function showToast(message, type) {
   const toast = document.getElementById("toast");
   toast.textContent = message;
-  toast.className = "toast show ";
+  toast.className = "toast show "+type;
   setTimeout(function () {
     toast.className = toast.className.replace("show", "");
   }, 4500);
