@@ -101,7 +101,7 @@ function update() {
   total.value = totalPrice.toFixed(2);
 }
 
-confirmOrder.addEventListener("click", placeOrder);
+confirmOrder.addEventListener("click", placeOrder); 
 
 function placeOrder() {
   const form = document.getElementById("orderForm");
